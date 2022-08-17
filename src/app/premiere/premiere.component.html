@@ -1,0 +1,24 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="pathImage" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" [ngClass]="{'rouge': random %2 === 0, 'blue': random %2 !== 0}">{{donneesCarte.titre}}</h5>
+    <p class="card-text" [ngStyle]="{'font-style': fontStyle}">{{donneesCarte.description}}</p>
+    <a href="#" class="btn btn-primary" (click)="showAlert()">Go somewhere</a>
+    <input type="number" name="" id="" [(ngModel)]="random" class="form-control mt-2 mb-2">
+    <div class="alert alert-info" *ngIf="random % 2 === 0">
+      Ne s'affiche que quand l'input est PAIR
+    </div>
+    <div class="alert alert-warning" *ngIf="random % 2 !== 0">
+      Ne s'affiche que quand l'input est UNPAIR
+    </div>
+    <div class="alert alert-info" [hidden]="random % 2 === 0">
+      Ne s'affiche que quand l'input est PAIR
+    </div>
+    <div class="alert alert-warning" [hidden]="random % 2 !== 0">
+      Ne s'affiche que quand l'input est UNPAIR
+    </div>
+    <ul>
+      <li *ngFor="let i of tableau">Item {{i}}</li>
+    </ul>
+  </div>
+</div>

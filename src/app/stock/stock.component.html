@@ -1,0 +1,15 @@
+<li *ngFor="let p of tableau">
+  <div class="card" style="width: 18rem;">
+    <img [src]="p.imagePath" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="product-name">{{p.name}}</h5>
+      <p class="product-description">{{p.description}}</p>
+      <p class="product-description">Price: {{p.price}}€ per kg</p>
+      <p>How many you want?</p>
+      <input type="number" name="" id="" class="form-control mt-2 mb-2">
+      <a *ngIf="p.quantity > 0" class="btn btn-primary" (click)="buy(p)">Buy</a>
+      <a *ngIf="p.quantity <= 0"  class="btn btn-primary" (click)="outOfStock()">Out of stock</a>
+    </div>
+  </div>
+</li>
+
