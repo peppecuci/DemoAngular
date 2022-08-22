@@ -8,6 +8,9 @@ import {Produit} from "./produit";
 })
 export class StockComponent implements OnInit {
 
+  onlyAvailable: boolean = false;
+  onlyInTheRange: boolean = false;
+
   tableau: Produit[] = [
 
     { id: 1, name: 'strawberry', description: 'fruit', imagePath: 'https://th.bing.com/th/id/R.f4228baaf3518e944dd0a4535420c7ad?rik=tDHsRTg%2frPP6dA&pid=ImgRaw&r=0', price: 5.00, quantity: 10},
@@ -17,6 +20,8 @@ export class StockComponent implements OnInit {
     { id: 5, name: 'peer', description: 'fruit', imagePath:'https://th.bing.com/th/id/R.51bf2ba177f01f190c1856057f71cf84?rik=%2fDaUw0fkaBnrgw&pid=ImgRaw&r=0', price: 1.5, quantity: 6}
 
   ];
+  minPrice: number = 0;
+  maxPrice: number = 0;
 
   constructor() { }
 

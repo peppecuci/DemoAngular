@@ -1,10 +1,22 @@
-<li *ngFor="let p of tableau">
+<div class="container-fluid">
+  <div>
+    <input type="checkbox" [(ngModel)]="onlyAvailable" id="filter-available">
+    <label for="filter-available">show me just availables items</label>
+  </div>
+  <div>
+    <input type="checkbox" [(ngModel)]="onlyInTheRange" id="filter-by-price-range">
+    <label for="filter-available">show me items in the price range</label>
+    <input type="number" [(ngModel)]="minPrice">
+    <input type="number" [(ngModel)]="maxPrice">
+  </div>
+
+<li *ngFor="let p of tableau | available:onlyAvailable | minmax:minPrice:(maxPrice==0?undefined:maxPrice);">
   <div class="card" style="width: 18rem;">
     <img [src]="p.imagePath" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="product-name">{{p.name}}</h5>
       <p class="product-description">{{p.description}}</p>
-      <p class="product-description">Price: {{p.price}}€ per kg</p>
+      <p class="product-description">Price: {{p.price | currency:'EUR':'symbol'}}</p>
       <p>How many you want?</p>
       <input type="number" name="" id="" class="form-control mt-2 mb-2">
       <a *ngIf="p.quantity > 0" class="btn btn-primary" (click)="buy(p)">Buy</a>
@@ -12,4 +24,5 @@
     </div>
   </div>
 </li>
+</div>
 
