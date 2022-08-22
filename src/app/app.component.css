@@ -1,0 +1,10 @@
+.spacer{
+  color: darkgoldenrod;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.active{
+  color: goldenrod !important;
+}

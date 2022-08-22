@@ -1,0 +1,8 @@
+ <div class="card" style="width: 18rem;">
+    <img [src]="product.imagePath" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="product-name">{{product.name}}</h5>
+      <p class="product-description">{{product.description}}</p>
+      <p class="product-description">Price: {{product.price | currency:'EUR':'symbol'}}</p>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<p>accueil works!</p>
+<p>
+  Choissisez un nombre pour voir s'il est pair ou non
+</p>
+
+<div>
+  <input type="number" [(ngModel)]="aVerifier" >
+  <button (click)="verifyParity()">verifier</button>
+  <p *ngIf="wrongNumber">wrong number</p>
+</div>
+
+<p>
+  Entrez l'id du produit
+</p>
+
+<div>
+  <input type="number" [(ngModel)]="productId">
+  <button (click)="verifyId()">find it out</button>
+</div>
